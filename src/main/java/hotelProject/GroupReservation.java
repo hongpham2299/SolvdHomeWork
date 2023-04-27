@@ -27,15 +27,13 @@ public class GroupReservation implements SearchReservation {
     }
 
     public void searchGroupRes(String inputLastName, String inputConfNumber){
-        boolean found = false;
         for(GroupBooking e:groupGuestList){
             if(e.getLastName().toLowerCase().contains(inputLastName.toLowerCase()) && e.getConfirmationNumber().equals(inputConfNumber)){
                 System.out.println("Hi, " + inputLastName + "! We found your reservation - CONF# " + e.getConfirmationNumber());
-                found = true;
                 return;
             }
         }
-        System.out.println("Not found");
+        System.out.println("We are not able to locate your reservation");
     }
 
 }

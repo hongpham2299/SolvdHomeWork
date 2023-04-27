@@ -71,15 +71,23 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
     }
 
     @Override
-    public void calculatedWages(int workedHours) {
-        if(getYearsOfExperience() == 1){
-            System.out.println(this.getName() + ": $" + basedWagePerHour * workedHours);
-        }
-        else if(getYearsOfExperience() == 2){
-            System.out.println(this.getName() + ": $" + twoYearsWageExp * workedHours);
-        }
-        else {
-            System.out.println(this.getName() + ": $" + threeYearsUpWageExp * workedHours);
+    public void calculatedWagesPerWeek(int inputHours) {
+        try{
+            if(getYearsOfExperience() == 1 && inputHours >= 0){
+                System.out.println(this.name + ": $" + basedWagePerHour * inputHours);
+                //throw new Exception("Can't be negative number");
+            }
+            if(getYearsOfExperience() == 2 && inputHours >=0){
+                System.out.println(this.name + ": $" + twoYearsWageExp * inputHours);
+            }
+            if(getYearsOfExperience() >= 3 && inputHours >=0){
+                System.out.println(this.name + ": $" + threeYearsUpWageExp * inputHours);
+            }
+            if(inputHours < 0){
+                throw new InputNegativeWorkedHoursException(this.name + ": The input hours can't be negative number");
+            }
+        }catch (InputNegativeWorkedHoursException e){
+            System.out.println(e.getMessage());
         }
     }
 }

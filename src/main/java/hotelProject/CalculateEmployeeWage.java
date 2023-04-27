@@ -1,5 +1,5 @@
 package hotelProject;
 
 public interface CalculateEmployeeWage {
-    public void calculatedWages(int workedHours);
+    public void calculatedWagesPerWeek(int workedHours);
 }

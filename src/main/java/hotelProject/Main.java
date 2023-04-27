@@ -1,5 +1,6 @@
 package hotelProject;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
         FrontDeskAgent alexDiaz = new FrontDeskAgent("Alex Diaz", "Full-time", 97, 3);
         alexDiaz.displayPerformance();
         alexDiaz.displaySalaryOrWage();
-        alexDiaz.calculatedWages(32);
+        alexDiaz.calculatedWagesPerWeek(35);
 
         FrontDeskAgent jennyWilliams = new FrontDeskAgent("Jenny William", "Full-time", "Female");
         FrontDeskAgent jodiNguyen = new FrontDeskAgent("Jodi Nguyen", "Part-time", "Female");
@@ -20,6 +21,9 @@ public class Main {
         employeeList.addNewEmployee(jodiNguyen);
         employeeList.addNewEmployee(scottPeavey);
         employeeList.addCurrentEmployee(alexDiaz);
+
+        jennyWilliams.setYearsOfExperience(1);
+        jennyWilliams.calculatedWagesPerWeek(-15);
 
         employeeList.displayEmployeeList();
 
@@ -35,8 +39,6 @@ public class Main {
         alexJenkins.bookGroupReservation();
         brittanyMatthews.bookGroupReservation();//This booking is not successful due to the departure date.
 
-        alexJenkins.displayBilling();
-
         GroupReservation groupGuestList = new GroupReservation();
         groupGuestList.addGroupGuestToList(hongPham);
         groupGuestList.addGroupGuestToList(stevenChang);
@@ -50,10 +52,18 @@ public class Main {
         Hotel jwHotel = new Hotel();
         jwHotel.displayHotelCategory();
 
+        alexJenkins.displayBilling();
+        alexJenkins.splitBilling(768.90, 2);
+
         System.out.println(RoomType.valueOfEachRoomType(50));
 
-        GroupEvent soficEvent = new GroupEvent();
-        soficEvent.displayGroupInformation();
+        HouseKeeping houseKeeping = new HouseKeeping();
+        File file = houseKeeping.createRoomStatusDataFile();
+        houseKeeping.addRoomStatusToFile(file, true);
+        houseKeeping.displayRoomStatusData();
+
+        //GroupEvent soficEvent = new GroupEvent();
+        //soficEvent.displayGroupInformation();
 
     }
 

@@ -41,12 +41,26 @@ public class Guest {
     }
 
     public void checkValidEmail(String email){
-        Pattern pattern = Pattern.compile(EMAIL_REGEX_PATTERN);
-        if(pattern.matcher(email).matches()){
-            System.out.println(email + ": Valid email");
+        try {
+            Pattern pattern = Pattern.compile(EMAIL_REGEX_PATTERN);
+            if(!pattern.matcher(email).matches()){
+                throw new InvalidEmailException(firstName + ": Your email - " + email + ": Invalid email");
+            }
+        }catch (InvalidEmailException e){
+            System.out.println(e.getMessage());
         }
-        else{
-            System.out.println(email + ": Invalid email");
+    }
+
+    public void splitBilling(double inputTotalAmounts, int inputNumberPeople){
+        try {
+            if(inputTotalAmounts > 0 && inputNumberPeople > 0){
+                System.out.println("Your splited billing: $" + inputTotalAmounts/inputNumberPeople);
+            }
+            else {
+                throw new InputNegativeNumberOfSplitBilling("Must be greater than zero");
+            }
+        }catch (InputNegativeNumberOfSplitBilling e){
+            System.out.println(e.getMessage());
         }
     }
 
