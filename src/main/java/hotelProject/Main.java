@@ -62,8 +62,8 @@ public class Main {
         houseKeeping.addRoomStatusToFile(file, true);
         houseKeeping.displayRoomStatusData();
 
-        //GroupEvent soficEvent = new GroupEvent();
-        //soficEvent.displayGroupInformation();
+        GroupEvent soficEvent = new GroupEvent();
+        soficEvent.displayGroupInformation();
 
     }
 
