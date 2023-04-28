@@ -12,16 +12,20 @@ public enum RoomType {
     KING_SUITE(7);
 
     public final int numOfRooms;
-    private RoomType(int numOfRooms) {
+    RoomType(int numOfRooms) {
         this.numOfRooms = numOfRooms;
     }
 
-    public static RoomType valueOfEachRoomType(int numOfRooms){
-        for (RoomType roomType : values()){
-            if(roomType.numOfRooms == numOfRooms)
-                return roomType;
+    public static void valueOfEachRoomType(int numOfRooms) {
+        try {
+            for (RoomType roomType : values()) {
+                if (roomType.numOfRooms != numOfRooms) {
+                    throw new InvalidValueOfRoomTypeException(numOfRooms + " :The number is invalid");
+                }
+            }
+        } catch (InvalidValueOfRoomTypeException e) {
+            System.out.println(e.getMessage());
         }
-        return null;
     }
 
 }

@@ -30,7 +30,7 @@ public class Main {
         GroupBooking hongPham = new GroupBooking("Hong", "Pham", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 2, 3, "hong@gmail.com");
         GroupBooking stevenChang = new GroupBooking("Steven", "Chang", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 3, 2, "chang@yahoo.com");
         GroupBooking kimTran = new GroupBooking("Kim", "Tran", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 4, 1, "kim@outlook.com");
-        GroupBooking alexJenkins = new GroupBooking("Alex", "Jenkins", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 5, 4, "alex.com");
+        GroupBooking alexJenkins = new GroupBooking("Greg", "Jenkins", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 5, 4, "greg.com");
         GroupBooking brittanyMatthews = new GroupBooking("Brittany", "Matthews", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 9), 1, 2, "matthew@google.com");
 
         hongPham.bookGroupReservation();
@@ -55,7 +55,7 @@ public class Main {
         alexJenkins.displayBilling();
         alexJenkins.splitBilling(768.90, 2);
 
-        System.out.println(RoomType.valueOfEachRoomType(50));
+        RoomType.valueOfEachRoomType(50);
 
         HouseKeeping houseKeeping = new HouseKeeping();
         File file = houseKeeping.createRoomStatusDataFile();
