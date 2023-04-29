@@ -1,0 +1,49 @@
+2023-04-29 14:28:47,942 ERROR h.FrontDeskAgent [main] Jenny William: The input hours can't be negative number
+2023-04-29 14:28:47,951 WARN h.Guest [main] Greg: Your email - greg.com: Invalid email
+2023-04-29 14:28:47,958 ERROR h.GroupBooking [main] Hong Pham: 2023-09-07: doesn't quality the SOFIC group contract, the arrival date must be 2023-09-08
+2023-04-29 14:28:47,958 ERROR h.GroupBooking [main] Hong Pham: 2023-09-12: doesn't quality the SOFIC group contract, the departure date must be 2023-09-10
+2023-04-29 14:28:47,971 INFO h.GroupReservation [main] Group Reservation:
+First Name: Hong
+Last Name: Pham
+Arrival Date: 2023-09-08
+Departure Date: 2023-09-10
+Number of Room(s): 2
+Number of Guest(s): 3
+Contract Group Rate: $350.0
+Confirmation Number: SOFICHongPham2
+---------------------
+2023-04-29 14:28:47,972 INFO h.GroupReservation [main] Group Reservation:
+First Name: Steven
+Last Name: Chang
+Arrival Date: 2023-09-08
+Departure Date: 2023-09-10
+Number of Room(s): 3
+Number of Guest(s): 2
+Contract Group Rate: $350.0
+Confirmation Number: SOFICStevenChang3
+---------------------
+2023-04-29 14:28:47,972 INFO h.GroupReservation [main] Group Reservation:
+First Name: Kim
+Last Name: Tran
+Arrival Date: 2023-09-08
+Departure Date: 2023-09-10
+Number of Room(s): 4
+Number of Guest(s): 1
+Contract Group Rate: $350.0
+Confirmation Number: SOFICKimTran4
+---------------------
+2023-04-29 14:28:47,972 INFO h.GroupReservation [main] Group Reservation:
+First Name: Greg
+Last Name: Jenkins
+Arrival Date: 2023-09-08
+Departure Date: 2023-09-10
+Number of Room(s): 5
+Number of Guest(s): 4
+Contract Group Rate: $350.0
+Confirmation Number: SOFICGregJenkins5
+---------------------
+2023-04-29 14:28:47,973 ERROR h.Guest [main] Split Billing: Must be greater than zero
+hotelProject.InputNegativeNumberOfSplitBilling: Split Billing: Must be greater than zero
+	at hotelProject.Guest.splitBilling(Guest.java:65) [classes/:?]
+	at hotelProject.Main.main(Main.java:60) [classes/:?]
+2023-04-29 14:28:47,982 ERROR h.RoomType [main] 51 :The number is invalid

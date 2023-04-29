@@ -15,7 +15,6 @@ public class Main {
         FrontDeskAgent jodiNguyen = new FrontDeskAgent("Jodi Nguyen", "Part-time", "Female");
         FrontDeskAgent scottPeavey = new FrontDeskAgent("Scott Peavey", "Part time", "Male");
 
-
         FrontDeskManager employeeList = new FrontDeskManager();
         employeeList.addNewEmployee(jennyWilliams);
         employeeList.addNewEmployee(jodiNguyen);
@@ -45,6 +44,11 @@ public class Main {
         groupGuestList.addGroupGuestToList(kimTran);
         groupGuestList.addGroupGuestToList(alexJenkins);
 
+        //Guest hongPham already booked reservation. However, she called back to change the arrival & departure date.
+        //The result: She won't be able to change.
+        hongPham.setArrDate(LocalDate.of(2023, 9, 7));
+        hongPham.setDepDate(LocalDate.of(2023, 9, 12));
+
         groupGuestList.displayGroupGuestList();
 
         groupGuestList.searchGroupRes("TRAN", "SOFICKimTran4");
@@ -53,17 +57,17 @@ public class Main {
         jwHotel.displayHotelCategory();
 
         alexJenkins.displayBilling();
-        alexJenkins.splitBilling(768.90, 2);
+        alexJenkins.splitBilling(768.90, -2);
 
-        RoomType.valueOfEachRoomType(50);
+        RoomType.valueOfEachRoomType(51);
 
         HouseKeeping houseKeeping = new HouseKeeping();
         File file = houseKeeping.createRoomStatusDataFile();
         houseKeeping.addRoomStatusToFile(file, true);
         houseKeeping.displayRoomStatusData();
 
-        GroupEvent soficEvent = new GroupEvent();
-        soficEvent.displayGroupInformation();
+        //GroupEvent soficEvent = new GroupEvent();
+        //soficEvent.displayGroupInformation();
 
     }
 
