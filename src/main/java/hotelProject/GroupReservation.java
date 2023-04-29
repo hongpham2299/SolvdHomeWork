@@ -1,10 +1,14 @@
 package hotelProject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GroupReservation implements SearchReservation {
 
+    private final Logger logger = LogManager.getLogger(GroupReservation.class.getName());
     private static List<GroupBooking> groupGuestList = new ArrayList<>();
     private final int groupRoomContract = 100;
 
@@ -22,7 +26,8 @@ public class GroupReservation implements SearchReservation {
 
     public void displayGroupGuestList(){
         for(GroupBooking e: groupGuestList){
-            System.out.println(e);
+            //System.out.println(e);
+            logger.info(e);
         }
     }
 
@@ -35,7 +40,6 @@ public class GroupReservation implements SearchReservation {
         }
         System.out.println("We are not able to locate your reservation");
     }
-
 }
 
 

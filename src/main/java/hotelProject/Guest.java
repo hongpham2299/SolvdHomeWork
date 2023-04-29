@@ -1,5 +1,8 @@
 package hotelProject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.regex.Pattern;
 
 public class Guest {
@@ -8,6 +11,7 @@ public class Guest {
     protected String firstName;
     protected String lastName;
     protected String email;
+    private final Logger logger = LogManager.getLogger(Guest.class.getName());
 
     public String getFirstName() {
         return firstName;
@@ -47,7 +51,8 @@ public class Guest {
                 throw new InvalidEmailException(firstName + ": Your email - " + email + ": Invalid email");
             }
         }catch (InvalidEmailException e){
-            System.out.println(e.getMessage());
+            logger.warn(e.getMessage());
+            //System.out.println(e.getMessage());
         }
     }
 
@@ -57,10 +62,10 @@ public class Guest {
                 System.out.println("Your splited billing: $" + inputTotalAmounts/inputNumberPeople);
             }
             else {
-                throw new InputNegativeNumberOfSplitBilling("Must be greater than zero");
+                throw new InputNegativeNumberOfSplitBilling("Split Billing: Must be greater than zero");
             }
         }catch (InputNegativeNumberOfSplitBilling e){
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage(), e);
         }
     }
 

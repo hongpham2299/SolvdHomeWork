@@ -8,9 +8,11 @@ public class FrontDeskManager extends Employee implements Department {
 
     private double salary;
     private List<FrontDeskAgent> frontDeskAgentList = new ArrayList<>();
+
     public void addNewEmployee(FrontDeskAgent newEmployee){
         this.frontDeskAgentList.add(newEmployee);
     }
+
     public void addCurrentEmployee(FrontDeskAgent currentEmployee){
         this.frontDeskAgentList.add(currentEmployee);
     }

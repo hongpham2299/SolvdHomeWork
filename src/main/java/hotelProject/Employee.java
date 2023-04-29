@@ -5,7 +5,6 @@ public abstract class Employee {
     protected String employmentStatus;
     protected int performanceScore;
     protected int yearsOfExperience;
-
     protected String gender;
 
     public String getName() {
@@ -57,6 +56,5 @@ public abstract class Employee {
             System.out.println(name + ": not the best employees of the month");
         }
     }
-
 }
 

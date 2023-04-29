@@ -1,5 +1,8 @@
 package hotelProject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,6 +12,7 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
     private final double twoYearsWageExp = basedWagePerHour + 2.35;
     private final double threeYearsUpWageExp = basedWagePerHour + 4.55;
     private List<GroupBooking> bookingList = new ArrayList<>();
+    private final Logger logger = LogManager.getLogger(FrontDeskAgent.class.getName());
 
     public FrontDeskAgent(String name, String employmentStatus,int performanceScore, int yearsOfExperience) {
         this.name = name;
@@ -23,7 +27,6 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
         this.employmentStatus = employmentStatus;
         this.gender = gender;
     }
-
 
     public void displaySalaryOrWage(){
         switch (yearsOfExperience){
@@ -87,7 +90,7 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
                 throw new InputNegativeWorkedHoursException(this.name + ": The input hours can't be negative number");
             }
         }catch (InputNegativeWorkedHoursException e){
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 }

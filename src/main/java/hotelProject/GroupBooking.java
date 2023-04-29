@@ -1,9 +1,14 @@
 package hotelProject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class GroupBooking extends Guest implements GuestBilling {
+
+    private final Logger logger = LogManager.getLogger(GroupBooking.class.getName());
     private final LocalDate contractedGroupArrDate = LocalDate.of(2023, 9, 8);
     private final LocalDate contractedGroupDepDate = LocalDate.of(2023, 9, 10);
     private final double groupRate = 350;
@@ -13,7 +18,6 @@ public class GroupBooking extends Guest implements GuestBilling {
     private LocalDate depDate;
     private int numOfRooms;
     private int numOfGuests;
-
     private enum roomType{
         KING,
         QUEENQUEEN,
@@ -29,16 +33,33 @@ public class GroupBooking extends Guest implements GuestBilling {
         this.email = email;
     }
 
-    public LocalDate getContractedGroupArrDate() {
-        return contractedGroupArrDate;
+    public void setArrDate(LocalDate arrDate) {
+        try{
+            if(arrDate.equals(contractedGroupArrDate)) {
+                this.arrDate = arrDate;
+            }
+            throw new IncorrectArrDepDateException(this.firstName + " " + this.lastName +
+                    ": " + arrDate + ": doesn't quality the SOFIC group contract, the arrival date must be "
+                + contractedGroupArrDate);
+        }
+        catch (IncorrectArrDepDateException e){
+            logger.error(e.getMessage());
+
+        }
     }
 
-    public LocalDate getContractedGroupDepDate() {
-        return contractedGroupDepDate;
-    }
-
-    public double getGroupRate() {
-        return groupRate;
+    public void setDepDate(LocalDate depDate) {
+        try{
+            if(depDate.equals(contractedGroupDepDate)) {
+                this.depDate = depDate;
+            }
+            throw new IncorrectArrDepDateException(this.firstName + " " + this.lastName +
+                ": " + depDate + ": doesn't quality the SOFIC group contract, the departure date must be "
+                + contractedGroupDepDate);
+        }
+        catch (IncorrectArrDepDateException e){
+            logger.error(e.getMessage());
+        }
     }
 
     public String getConfirmationNumber() {
@@ -70,19 +91,17 @@ public class GroupBooking extends Guest implements GuestBilling {
         System.out.println(getFirstName() + " " + getLastName() + ": Total charge for your reservation is $" + totalBilling);
     }
 
-    @Override
     public String toString() {
-        return "GroupReservation {" +
-                "groupRate= $" + groupRate +
-                ", confirmationNumber='" + confirmationNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", arrDate=" + arrDate +
-                ", depDate=" + depDate +
-                ", numOfRooms=" + numOfRooms +
-                ", numOfGuests=" + numOfGuests +
-                '}';
+        return "Group Reservation:\n" +
+                "First Name: " + firstName + "\n" +
+                "Last Name: " + lastName + "\n" +
+                "Arrival Date: " + arrDate + "\n" +
+                "Departure Date: " + depDate + "\n" +
+                "Number of Room(s): " + numOfRooms + "\n" +
+                "Number of Guest(s): " + numOfGuests + "\n" +
+                "Contract Group Rate: $" + groupRate + "\n" +
+                "Confirmation Number: " + confirmationNumber + "\n" +
+                "---------------------";
     }
 
     @Override

@@ -1,10 +1,13 @@
 package hotelProject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.*;
 
 public class HouseKeeping {
 
     private String filePath = "src/main/java/hotelProject/RoomStatusDataFile.csv";
+    private final Logger logger = LogManager.getLogger(HouseKeeping.class.getName());
 
     protected File createRoomStatusDataFile() {
         try {
@@ -14,7 +17,7 @@ public class HouseKeeping {
             }
             return file;
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage(), e);
             throw new IllegalArgumentException(e);
         }
     }
@@ -26,9 +29,9 @@ public class HouseKeeping {
         ) {
             writer.write("\n1716, KING_WATERVIEW_BALCONY, READY");
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
+            logger.error(e.getMessage(), e);
         }
-
     }
 
     public void displayRoomStatusData()  {
@@ -44,5 +47,4 @@ public class HouseKeeping {
             throw new RuntimeException(e);
         }
     }
-
 }
