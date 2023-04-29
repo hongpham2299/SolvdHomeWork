@@ -1,5 +1,8 @@
 package hotelProject;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public enum RoomType {
 
     KING(170),
@@ -16,6 +19,8 @@ public enum RoomType {
         this.numOfRooms = numOfRooms;
     }
 
+    private static final Logger logger = LogManager.getLogger(RoomType.class.getName());
+
     public static void valueOfEachRoomType(int numOfRooms) {
         try {
             for (RoomType roomType : values()) {
@@ -24,7 +29,7 @@ public enum RoomType {
                 }
             }
         } catch (InvalidValueOfRoomTypeException e) {
-            System.out.println(e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 
