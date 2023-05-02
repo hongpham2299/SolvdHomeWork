@@ -1,13 +1,12 @@
 package hotelProject;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class FrontDeskManager extends Employee implements Department {
 
     private double salary;
     private List<FrontDeskAgent> frontDeskAgentList = new ArrayList<>();
+    private Queue<Guest> customerServiceLine = new LinkedList<>();
 
     public void addNewEmployee(FrontDeskAgent newEmployee){
         this.frontDeskAgentList.add(newEmployee);
@@ -22,6 +21,18 @@ public class FrontDeskManager extends Employee implements Department {
             System.out.println(fdlist);
         }
         System.out.println("Front Desk - Number of Employees: " + frontDeskAgentList.size());
+    }
+
+    public void addGuestToCustomerServiceLine (Guest guest){
+        customerServiceLine.offer(guest);
+    }
+
+    public void assistCustomers(){
+        customerServiceLine.poll();
+    }
+
+    public void displayCustomerServiceLine(){
+        customerServiceLine.forEach(System.out::println);
     }
 
     @Override

@@ -11,7 +11,7 @@ public class GroupBooking extends Guest implements GuestBilling {
     private final Logger logger = LogManager.getLogger(GroupBooking.class.getName());
     private final LocalDate contractedGroupArrDate = LocalDate.of(2023, 9, 8);
     private final LocalDate contractedGroupDepDate = LocalDate.of(2023, 9, 10);
-    private final double groupRate = 350;
+    private final double groupRate = 350.00;
     private final int contractedNumOfNights = 2;
     private String confirmationNumber;
     private LocalDate arrDate;
@@ -87,7 +87,7 @@ public class GroupBooking extends Guest implements GuestBilling {
 
     @Override
     public void displayBilling() {
-        int totalBilling = contractedNumOfNights * 350;
+        double totalBilling = contractedNumOfNights * groupRate;
         System.out.println(getFirstName() + " " + getLastName() + ": Total charge for your reservation is $" + totalBilling);
     }
 

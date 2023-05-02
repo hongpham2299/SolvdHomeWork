@@ -13,6 +13,20 @@ public class Guest {
     protected String email;
     private final Logger logger = LogManager.getLogger(Guest.class.getName());
 
+    public Guest(String firstName, String lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
+
+    }
+
+    public Guest(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.checkValidEmail(email);
+    }
+
+
     public String getFirstName() {
         return firstName;
     }
@@ -31,13 +45,6 @@ public class Guest {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Guest(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.checkValidEmail(email);
     }
 
     public String getEmail() {
@@ -74,7 +81,6 @@ public class Guest {
         return "Guest {" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
                 '}';
     }
 }

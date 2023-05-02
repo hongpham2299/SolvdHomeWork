@@ -11,7 +11,7 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
     private final double basedWagePerHour = 17.25;
     private final double twoYearsWageExp = basedWagePerHour + 2.35;
     private final double threeYearsUpWageExp = basedWagePerHour + 4.55;
-    private List<GroupBooking> bookingList = new ArrayList<>();
+    //private List<GroupBooking> bookingList = new ArrayList<>();
     private final Logger logger = LogManager.getLogger(FrontDeskAgent.class.getName());
 
     public FrontDeskAgent(String name, String employmentStatus,int performanceScore, int yearsOfExperience) {
@@ -64,13 +64,12 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
         FrontDeskAgent that = (FrontDeskAgent) o;
         return Double.compare(that.basedWagePerHour, basedWagePerHour) == 0 &&
                 Double.compare(that.twoYearsWageExp, twoYearsWageExp) == 0 &&
-                Double.compare(that.threeYearsUpWageExp, threeYearsUpWageExp) == 0 &&
-                Objects.equals(bookingList, that.bookingList);
+                Double.compare(that.threeYearsUpWageExp, threeYearsUpWageExp) == 0;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(basedWagePerHour, twoYearsWageExp, threeYearsUpWageExp, bookingList);
+        return Objects.hash(basedWagePerHour, twoYearsWageExp, threeYearsUpWageExp);
     }
 
     @Override
