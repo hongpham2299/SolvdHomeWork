@@ -3,6 +3,9 @@ package hotelProject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.EnumSet;
+import java.util.Iterator;
+
 public enum RoomType {
 
     KING(170),
@@ -19,7 +22,21 @@ public enum RoomType {
         this.numOfRooms = numOfRooms;
     }
 
+    private static EnumSet<RoomType> roomTypeEnumSet;
     private static final Logger logger = LogManager.getLogger(RoomType.class.getName());
+
+    public static void displayAllRoomTypes(){
+        roomTypeEnumSet = EnumSet.allOf(RoomType.class);
+        Iterator<RoomType> it = roomTypeEnumSet.iterator();
+        while(it.hasNext()){
+            System.out.println(it.next());
+        }
+    }
+
+    public static void displayRoomTypesWithoutSuites(){
+        roomTypeEnumSet = EnumSet.range(RoomType.KING, RoomType.QUEENQUEEN_WATERVIEW_BALCONY);
+        System.out.println("Room Types without Suites: " + roomTypeEnumSet);
+    }
 
     public static void valueOfEachRoomType(int numOfRooms) {
         try {
