@@ -3,6 +3,8 @@ package hotelProject;
 import java.io.File;
 import java.time.LocalDate;
 
+import static hotelProject.RoomType.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -15,22 +17,37 @@ public class Main {
         FrontDeskAgent jodiNguyen = new FrontDeskAgent("Jodi Nguyen", "Part-time", "Female");
         FrontDeskAgent scottPeavey = new FrontDeskAgent("Scott Peavey", "Part time", "Male");
 
-        FrontDeskManager employeeList = new FrontDeskManager();
-        employeeList.addNewEmployee(jennyWilliams);
-        employeeList.addNewEmployee(jodiNguyen);
-        employeeList.addNewEmployee(scottPeavey);
-        employeeList.addCurrentEmployee(alexDiaz);
+        FrontDeskManager frontDeskManager = new FrontDeskManager();
+        frontDeskManager.addNewEmployee(jennyWilliams);
+        frontDeskManager.addNewEmployee(jodiNguyen);
+        frontDeskManager.addNewEmployee(scottPeavey);
+        frontDeskManager.addCurrentEmployee(alexDiaz);
+
+        frontDeskManager.displayEmployeeList();
 
         jennyWilliams.setYearsOfExperience(1);
         jennyWilliams.calculatedWagesPerWeek(-15);
 
-        employeeList.displayEmployeeList();
+        Guest josephLeGuest = new Guest("Joseph", "Le");
+        Guest sabrinaTorresGuest = new Guest("Sabrina", "Torres");
+        Guest henryNguyenGuest = new Guest("Henry", "Nguyen");
+        Guest hollyHowellGuest = new Guest("Holly", "Howell");
+
+        frontDeskManager.addGuestToCustomerServiceLine(henryNguyenGuest);
+        frontDeskManager.addGuestToCustomerServiceLine(sabrinaTorresGuest);
+        frontDeskManager.addGuestToCustomerServiceLine(josephLeGuest);
+        frontDeskManager.addGuestToCustomerServiceLine(hollyHowellGuest);
+
+        frontDeskManager.assistCustomers();
+
+        frontDeskManager.displayCustomerServiceLine();
 
         GroupBooking hongPham = new GroupBooking("Hong", "Pham", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 2, 3, "hong@gmail.com");
         GroupBooking stevenChang = new GroupBooking("Steven", "Chang", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 3, 2, "chang@yahoo.com");
         GroupBooking kimTran = new GroupBooking("Kim", "Tran", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 4, 1, "kim@outlook.com");
         GroupBooking alexJenkins = new GroupBooking("Greg", "Jenkins", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 5, 4, "greg.com");
         GroupBooking brittanyMatthews = new GroupBooking("Brittany", "Matthews", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 9), 1, 2, "matthew@google.com");
+        GroupBooking maiTran = new GroupBooking("Mai", "Tran", LocalDate.of(2023, 9, 8), LocalDate.of(2023, 9, 10), 1, 2, "mai@yahoo.com");
 
         hongPham.bookGroupReservation();
         stevenChang.bookGroupReservation();
@@ -43,9 +60,10 @@ public class Main {
         groupGuestList.addGroupGuestToList(stevenChang);
         groupGuestList.addGroupGuestToList(kimTran);
         groupGuestList.addGroupGuestToList(alexJenkins);
+        groupGuestList.addGroupGuestToList(maiTran);
 
         //Guest hongPham already booked reservation. However, she called back to change the arrival & departure date.
-        //The result: She won't be able to change.
+        //The result: She won't be able to change due to the Group Contract
         hongPham.setArrDate(LocalDate.of(2023, 9, 7));
         hongPham.setDepDate(LocalDate.of(2023, 9, 12));
 
@@ -59,18 +77,30 @@ public class Main {
         alexJenkins.displayBilling();
         alexJenkins.splitBilling(768.90, -2);
 
-        RoomType.valueOfEachRoomType(51);
+        valueOfEachRoomType(51);
+        displayAllRoomTypes();
+        displayRoomTypesWithoutSuites();
+
+        Accounting groupAccounting = new Accounting();
+        groupAccounting.addGuestToGroupAccountsList("JW3567", hongPham);
+        groupAccounting.addGuestToGroupAccountsList("JW1289", stevenChang);
+        groupAccounting.addGuestToGroupAccountsList("JW5897", kimTran);
+        groupAccounting.addGuestToGroupAccountsList("JW8956", alexJenkins);
+        groupAccounting.addGuestToGroupAccountsList("JW5612", maiTran);
+
+        groupAccounting.searchGroupGuestAccount("JW123456");
+
+        groupAccounting.displayGroupGuestAccountList();
 
         HouseKeeping houseKeeping = new HouseKeeping();
         File file = houseKeeping.createRoomStatusDataFile();
         houseKeeping.addRoomStatusToFile(file, true);
         houseKeeping.displayRoomStatusData();
 
-        //GroupEvent soficEvent = new GroupEvent();
-        //soficEvent.displayGroupInformation();
+        GroupEvent soficEvent = new GroupEvent();
+        soficEvent.displayGroupInformation();
 
     }
-
 
 }
 
