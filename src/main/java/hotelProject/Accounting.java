@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class Accounting {
     private Map<String, GroupBooking> groupGuestAccount = new HashMap<>();
+    private CustomLinkedList<Hotel> accountPayableForHotel = new CustomLinkedList<>();
 
     public void addGuestToGroupAccountsList(String inputNumberID, GroupBooking inputGroupGuest){
         groupGuestAccount.put(inputNumberID, inputGroupGuest);
@@ -26,6 +27,21 @@ public class Accounting {
             }
         }
         System.out.println(inputGuestAccountNumber + ": Not Found");
+    }
 
+    public void addBillToHotelAccountPayableAtFirstPosition(Hotel inputHotelBill){
+        accountPayableForHotel.addFirst(inputHotelBill);
+    }
+
+    public void addBillToHotelAccountPayableAtLastPosition(Hotel inputHotelBill){
+        accountPayableForHotel.addLast(inputHotelBill);
+    }
+
+    public void addBillToHotelAccountPayableAtGivenPosition(int position, Hotel inputHotelBill){
+        accountPayableForHotel.addAtGivenPosition(position, inputHotelBill);
+    }
+
+    public void displayHotelAccountPayable(){
+        accountPayableForHotel.print();
     }
 }
