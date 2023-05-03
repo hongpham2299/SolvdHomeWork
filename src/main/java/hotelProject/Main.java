@@ -81,16 +81,28 @@ public class Main {
         displayAllRoomTypes();
         displayRoomTypesWithoutSuites();
 
-        Accounting groupAccounting = new Accounting();
-        groupAccounting.addGuestToGroupAccountsList("JW3567", hongPham);
-        groupAccounting.addGuestToGroupAccountsList("JW1289", stevenChang);
-        groupAccounting.addGuestToGroupAccountsList("JW5897", kimTran);
-        groupAccounting.addGuestToGroupAccountsList("JW8956", alexJenkins);
-        groupAccounting.addGuestToGroupAccountsList("JW5612", maiTran);
+        Accounting accounting = new Accounting();
+        accounting.addGuestToGroupAccountsList("JW3567", hongPham);
+        accounting.addGuestToGroupAccountsList("JW1289", stevenChang);
+        accounting.addGuestToGroupAccountsList("JW5897", kimTran);
+        accounting.addGuestToGroupAccountsList("JW8956", alexJenkins);
+        accounting.addGuestToGroupAccountsList("JW5612", maiTran);
 
-        groupAccounting.searchGroupGuestAccount("JW123456");
+        accounting.searchGroupGuestAccount("JW123456");
 
-        groupAccounting.displayGroupGuestAccountList();
+        accounting.displayGroupGuestAccountList();
+
+        Hotel waterBill = new Hotel("Water Bill");
+        Hotel electricBill = new Hotel("Electric Bill");
+        Hotel restaurantSupplyBill = new Hotel("Restaurant Supply Bill");
+        Hotel spaSupplyBill = new Hotel("Spa Supply Bill");
+
+        accounting.addBillToHotelAccountPayableAtFirstPosition(waterBill);
+        accounting.addBillToHotelAccountPayableAtLastPosition(electricBill);
+        accounting.addBillToHotelAccountPayableAtLastPosition(spaSupplyBill);
+        accounting.addBillToHotelAccountPayableAtGivenPosition(3, restaurantSupplyBill);
+
+        accounting.displayHotelAccountPayable();
 
         HouseKeeping houseKeeping = new HouseKeeping();
         File file = houseKeeping.createRoomStatusDataFile();
