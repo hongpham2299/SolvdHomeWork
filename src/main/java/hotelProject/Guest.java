@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class Guest {
 
-    protected static final String EMAIL_REGEX_PATTERN = "^(.+)@(.+).(.+)$";
+    protected final String EMAIL_REGEX_PATTERN = "^(.+)@(.+).(.+)$";
     protected String firstName;
     protected String lastName;
     protected String email;
