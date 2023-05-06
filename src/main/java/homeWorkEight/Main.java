@@ -23,10 +23,10 @@ public class Main {
         String contents;
         try {
             contents = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
-            System.out.println(contents);
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
         }
+        System.out.println(contents);
 
         //Calculate the numbers of the unique words
         Pattern p = Pattern.compile("\\w+");
