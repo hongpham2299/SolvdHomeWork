@@ -1,6 +1,7 @@
 package homeWorkEight;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -28,9 +29,11 @@ public class Main {
         }
         System.out.println(contents);
 
+        String lowerCaseContents = StringUtils.lowerCase(contents);
+
         //Calculate the numbers of the unique words
         Pattern p = Pattern.compile("\\w+");
-        Matcher m = p.matcher(contents.toLowerCase());
+        Matcher m = p.matcher(lowerCaseContents);
 
         Set<String> set =  new HashSet<>();
         int i=0;
