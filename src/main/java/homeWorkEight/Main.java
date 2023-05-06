@@ -17,7 +17,7 @@ public class Main {
         The main requirement is: using StringUtils and FileUtils to implement it with minimum lines of code.
          */
 
-        File file = new File("src/main/java/homeWorkSeven/LearningFileUtils.text");
+        File file = new File("src/main/java/homeWorkEight/LearningFileUtils.text");
 
         //Read text from the file
         String contents;
@@ -45,7 +45,7 @@ public class Main {
         //Write the result to the file
         String totalUniqueWordsCount = "\nWrite the result to the file - Total unique words count are: " + set.size();
         try {
-            FileUtils.write(file, totalUniqueWordsCount, StandardCharsets.UTF_8, true);
+            FileUtils.writeStringToFile(file, totalUniqueWordsCount, StandardCharsets.UTF_8, true);
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
         }
