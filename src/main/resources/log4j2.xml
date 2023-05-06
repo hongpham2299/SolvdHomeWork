@@ -2,6 +2,7 @@
 <Configuration status="WARN">
     <Properties>
         <Property name="filename">src/main/java/hotelProject/logs</Property>
+        <Property name="filename">src/main/java/homeWorkEight/logs</Property>
     </Properties>
     <Appenders>
         <RollingFile name="file"
@@ -17,7 +18,11 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="hotelProject" level="trace" additivity="false">
+        <Logger name="hotelProject" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Logger name="homeWorkEight" level="info" additivity="false">
             <AppenderRef ref="file"/>
             <AppenderRef ref="Console"/>
         </Logger>
