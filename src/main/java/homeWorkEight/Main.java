@@ -2,6 +2,8 @@ package homeWorkEight;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,17 +19,18 @@ public class Main {
         Read text from the file and calculate the numbers of the unique words. Write the result to the file.
         The main requirement is: using StringUtils and FileUtils to implement it with minimum lines of code.
          */
+        Logger logger = LogManager.getLogger(Main.class.getName());
 
         File file = new File("src/main/java/homeWorkEight/LearningFileUtils.text");
 
         //Read text from the file
-        String contents;
+        String contents = " ";
         try {
             contents = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
+            logger.info(contents);
         } catch (IOException e) {
-            throw new RuntimeException(e.getMessage());
+            logger.error("Exception: Reading file error - " + e.getMessage());
         }
-        System.out.println(contents);
 
         String lowerCaseContents = StringUtils.lowerCase(contents);
 
@@ -42,15 +45,15 @@ public class Main {
             set.add(m.group());
         }
 
-        System.out.println("Total words count are: " + i);
-        System.out.println("Total unique words count are: " + set.size());
+        logger.info("Total words count are: " + i);
+        logger.info("Total unique words count are: " + set.size());
 
         //Write the result to the file
         String totalUniqueWordsCount = "\nWrite the result to the file - Total unique words count are: " + set.size();
         try {
             FileUtils.writeStringToFile(file, totalUniqueWordsCount, StandardCharsets.UTF_8, true);
         } catch (IOException e) {
-            throw new RuntimeException(e.getMessage());
+            logger.error("Exception: Writing file error - " + e.getMessage());
         }
     }
 }
