@@ -22,7 +22,7 @@ public class Main {
         //Read text from the file
         String contents;
         try {
-            contents = FileUtils.readFileToString(file, "UTF-8");
+            contents = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
             System.out.println(contents);
         } catch (IOException e) {
             throw new RuntimeException(e.getMessage());
