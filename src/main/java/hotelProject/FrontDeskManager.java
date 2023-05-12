@@ -4,9 +4,20 @@ import java.util.*;
 
 public class FrontDeskManager extends Employee implements Department {
 
-    private double salary;
+    private int salary;
     private List<FrontDeskAgent> frontDeskAgentList = new ArrayList<>();
     private Queue<Guest> customerServiceLine = new LinkedList<>();
+
+    public FrontDeskManager(){}
+
+    public FrontDeskManager (String name, int salary){
+        this.name = name;
+        this.salary = salary;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
 
     public void addNewEmployee(FrontDeskAgent newEmployee){
         this.frontDeskAgentList.add(newEmployee);
