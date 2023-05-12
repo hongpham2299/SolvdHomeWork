@@ -1,5 +1,8 @@
 package hotelProject;
 
+import java.time.LocalDateTime;
+import java.util.function.Supplier;
+
 public abstract class Employee {
     protected String name;
     protected String employmentStatus;
@@ -55,6 +58,12 @@ public abstract class Employee {
         }else {
             System.out.println(name + ": not the best employees of the month");
         }
+    }
+
+    //Using Supplier, Pre-defined Functional Interfaces
+    public Supplier<LocalDateTime> employeePunchInTime () {
+        System.out.println(getName() + " - Punch In Time below: ");
+        return () -> LocalDateTime.now();
     }
 }
 
