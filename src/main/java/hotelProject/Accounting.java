@@ -1,7 +1,9 @@
 package hotelProject;
 
 import java.util.*;
+import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Accounting {
     private Map<String, GroupBooking> groupGuestAccount = new HashMap<>();
@@ -50,10 +52,23 @@ public class Accounting {
     }
 
     //Using the Function, Pre-defined Functional Interfaces
-    public void addBonusToAllFrontDeskManager(Function<FrontDeskManager, Integer> percentage){
+    public void displayFrontDeskManagerBonus (Function<FrontDeskManager, Integer> percentage) {
         for(FrontDeskManager st: frontDeskManagerList){
             int bonus = percentage.apply(st);
             System.out.println(st.getName() + ", Bonus: " + bonus);
+        }
+    }
+
+    //Using Function to apply the bonus to all managers
+    //-> Using Predicate to set the bonus >3K or different amount
+    //-> Using Consumer to print only the managers that have the bonus >3K or different amount
+    public void displayFrontDeskManagerWithBonusCondition (Function<FrontDeskManager, Integer> percentage,
+                                               Predicate<Integer> predicate, Consumer<FrontDeskManager> consumer) {
+        for (FrontDeskManager st : frontDeskManagerList) {
+            int bonus = percentage.apply(st);
+            if (predicate.test(bonus)) {
+                consumer.accept(st);
+            }
         }
     }
 }
