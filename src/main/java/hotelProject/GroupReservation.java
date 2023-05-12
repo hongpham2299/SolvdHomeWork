@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.*;
+import java.util.function.Predicate;
 
 public class GroupReservation implements SearchReservation {
 
@@ -34,6 +35,17 @@ public class GroupReservation implements SearchReservation {
             }
         }
         System.out.println("We are not able to locate your reservation");
+    }
+
+    //Using Predicate, Pre-defined Functional Interfaces
+    public void searchGroupResByPredicate (Predicate<GroupBooking> inputKeywordsSearch){
+        List<GroupBooking> searchList = new ArrayList<>();
+        for(GroupBooking gb: groupGuestList){
+            if(inputKeywordsSearch.test(gb)){
+                searchList.add(gb);
+            }
+        }
+        System.out.println(searchList);
     }
 
 }
