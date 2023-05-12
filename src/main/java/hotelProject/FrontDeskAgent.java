@@ -11,7 +11,13 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
     private final double basedWagePerHour = 17.25;
     private final double twoYearsWageExp = basedWagePerHour + 2.35;
     private final double threeYearsUpWageExp = basedWagePerHour + 4.55;
-    //private List<GroupBooking> bookingList = new ArrayList<>();
+    protected enum shift{
+        MORNING_SHIFT,
+        AFTERNOON_SHIFT,
+        EVENING_SHIFT,
+        OVERNIGHT_SHIFT;
+    }
+
     private final Logger logger = LogManager.getLogger(FrontDeskAgent.class.getName());
 
     public FrontDeskAgent(String name, String employmentStatus,int performanceScore, int yearsOfExperience) {
@@ -45,6 +51,12 @@ public class FrontDeskAgent extends Employee implements CalculateEmployeeWage {
             default:
                 System.out.println(name + ": with more than " + yearsOfExperience + " years experience ---> $"
                         + threeYearsUpWageExp + "/hour");
+        }
+    }
+
+    public static void displayWorkingShiftForFrontDeskTeam(){
+        for(shift allShifts: shift.values()){
+            System.out.println(allShifts);
         }
     }
 
