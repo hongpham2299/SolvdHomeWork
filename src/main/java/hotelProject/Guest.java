@@ -3,6 +3,7 @@ package hotelProject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.LocalDate;
 import java.util.regex.Pattern;
 
 public class Guest {
@@ -11,6 +12,8 @@ public class Guest {
     protected String firstName;
     protected String lastName;
     protected String email;
+    protected LocalDate dateOfBirth;
+    protected String phoneNumber;
     private final Logger logger = LogManager.getLogger(Guest.class.getName());
 
     public Guest(String firstName, String lastName){
@@ -24,6 +27,13 @@ public class Guest {
         this.lastName = lastName;
         this.email = email;
         this.checkValidEmail(email);
+    }
+
+    public Guest (String firstName, String lastName, String phoneNumber, LocalDate dateOfBirth ){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.dateOfBirth = dateOfBirth;
     }
 
 
@@ -49,6 +59,14 @@ public class Guest {
 
     public String getEmail() {
         return email;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public void checkValidEmail(String email){
