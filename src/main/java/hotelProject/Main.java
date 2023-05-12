@@ -131,11 +131,19 @@ public class Main {
         frontDeskManagerList.addFrontDeskManagersToList(new FrontDeskManager("Courtney Shuckra", 47000));
 
         //Using Function to apply 5% bonus to all the front desk managers.
-        frontDeskManagerList.addBonusToAllFrontDeskManager(f->(f.getSalary()*5)/100);
+        frontDeskManagerList.displayFrontDeskManagerBonus(f->(f.getSalary()*5)/100);
 
-        Guest joeMadieo = new Guest("Joe", "Madieo", "8132380232", LocalDate.of(2010, 1, 1));
+        //Using Function to apply the bonus to all managers
+        //-> Using Predicate to set the bonus >3K or different amount
+        //-> Using Consumer to print only the managers that have the bonus >3K or different amount
+        frontDeskManagerList.displayFrontDeskManagerWithBonusCondition(
+                p-> (p.getSalary()*5)/100,
+                p-> p>3000,
+                p-> System.out.println("Print Received Bonus >3000 - " + p.getName()
+                        + ", Salary: $" + p.getSalary() + ", Bonus: $" + (p.getSalary()*5)/100));
 
         //Using Combinator Pattern to validate guest information before register for Gym membership
+        Guest joeMadieo = new Guest("Joe", "Madieo", "8132380232", LocalDate.of(2010, 1, 1));
         ValidationResult result = isPhoneNumberValid().and(isAnAdult()).apply(joeMadieo);
         System.out.println(result);
 
