@@ -3,7 +3,11 @@ package hotelProject;
 import java.io.File;
 import java.time.LocalDate;
 
+import static hotelProject.FrontDeskAgent.displayWorkingShiftForFrontDeskTeam;
+import static hotelProject.GuestRegisterValidation.isAnAdult;
+import static hotelProject.GuestRegisterValidation.isPhoneNumberValid;
 import static hotelProject.RoomType.*;
+import static hotelProject.GuestRegisterValidation.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -69,6 +73,7 @@ public class Main {
 
         groupGuestList.displayGroupGuestList();
 
+        //Using the regular method to search Group Guest
         groupGuestList.searchGroupRes("TRAN", "SOFICKimTran4");
 
         Hotel jwHotel = new Hotel();
@@ -111,6 +116,39 @@ public class Main {
 
         GroupEvent soficEvent = new GroupEvent();
         soficEvent.displayGroupInformation();
+
+        //Using Supplier to record the employee Punch In Time
+        System.out.println(jennyWilliams.employeePunchInTime().get());
+
+        //Using the Predicate to search Group Guest
+        groupGuestList.searchGroupResByPredicate(inputLastName->inputLastName.getLastName().equalsIgnoreCase("Chang"));
+        groupGuestList.searchGroupResByPredicate(inputEmail->inputEmail.getEmail().equals("kim@outlook.com"));
+
+        Accounting frontDeskManagerList = new Accounting();
+        frontDeskManagerList.addFrontDeskManagersToList(new FrontDeskManager("Mo Arce", 75000));
+        frontDeskManagerList.addFrontDeskManagersToList(new FrontDeskManager("Alice Diaz", 69000));
+        frontDeskManagerList.addFrontDeskManagersToList(new FrontDeskManager("Josh Bowen", 55000));
+        frontDeskManagerList.addFrontDeskManagersToList(new FrontDeskManager("Courtney Shuckra", 47000));
+
+        //Using Function to apply 5% bonus to all the front desk managers.
+        frontDeskManagerList.addBonusToAllFrontDeskManager(f->(f.getSalary()*5)/100);
+
+        Guest joeMadieo = new Guest("Joe", "Madieo", "8132380232", LocalDate.of(2010, 1, 1));
+
+        //Using Combinator Pattern to validate guest information before register for Gym membership
+        ValidationResult result = isPhoneNumberValid().and(isAnAdult()).apply(joeMadieo);
+        System.out.println(result);
+
+        System.out.println(RoomStatus.OCCUPIED_CLEAN.getDescription());
+        System.out.println(RoomStatus.VACANT_DIRTY.getRoomTerminology());
+
+        displayWorkingShiftForFrontDeskTeam();
+
+
+
+
+
+
 
     }
 
