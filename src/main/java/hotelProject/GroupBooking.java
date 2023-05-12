@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDate;
 import java.util.Objects;
+import java.util.function.BinaryOperator;
 
 public class GroupBooking extends Guest implements GuestBilling {
 
@@ -31,6 +32,18 @@ public class GroupBooking extends Guest implements GuestBilling {
         this.numOfGuests = numOfGuests;
         this.confirmationNumber = "SOFIC" + firstName + lastName + numOfRooms;
         this.email = email;
+    }
+
+    public double getGroupRate() {
+        return groupRate;
+    }
+
+    public int getNumOfRooms() {
+        return numOfRooms;
+    }
+
+    public int getContractedNumOfNights() {
+        return contractedNumOfNights;
     }
 
     public void setArrDate(LocalDate arrDate) {
@@ -101,6 +114,7 @@ public class GroupBooking extends Guest implements GuestBilling {
                 "Number of Guest(s): " + numOfGuests + "\n" +
                 "Contract Group Rate: $" + groupRate + "\n" +
                 "Confirmation Number: " + confirmationNumber + "\n" +
+                "Email: " + email + "\n" +
                 "---------------------";
     }
 
