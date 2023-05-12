@@ -1,12 +1,12 @@
 package hotelProject;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
 
 public class Accounting {
     private Map<String, GroupBooking> groupGuestAccount = new HashMap<>();
     private CustomLinkedList<Hotel> accountPayableForHotel = new CustomLinkedList<>();
+    private List<FrontDeskManager> frontDeskManagerList = new ArrayList<>();
 
     public void addGuestToGroupAccountsList(String inputNumberID, GroupBooking inputGroupGuest){
         groupGuestAccount.put(inputNumberID, inputGroupGuest);
@@ -43,5 +43,17 @@ public class Accounting {
 
     public void displayHotelAccountPayable(){
         accountPayableForHotel.print();
+    }
+
+    public void addFrontDeskManagersToList(FrontDeskManager frontDeskManager){
+        frontDeskManagerList.add(frontDeskManager);
+    }
+
+    //Using the Function, Pre-defined Functional Interfaces
+    public void addBonusToAllFrontDeskManager(Function<FrontDeskManager, Integer> percentage){
+        for(FrontDeskManager st: frontDeskManagerList){
+            int bonus = percentage.apply(st);
+            System.out.println(st.getName() + ", Bonus: " + bonus);
+        }
     }
 }
