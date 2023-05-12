@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDate;
 import java.util.Objects;
-import java.util.function.BinaryOperator;
 
 public class GroupBooking extends Guest implements GuestBilling {
 
