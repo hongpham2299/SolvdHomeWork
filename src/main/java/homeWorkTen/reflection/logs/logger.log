@@ -1,0 +1,65 @@
+2023-05-14 23:14:37,580 INFO h.r.Car [main] Constructor: [class java.lang.String, int], Constructor Access Modifier: private
+2023-05-14 23:14:37,582 INFO h.r.Car [main] Constructor: [class java.lang.String], Constructor Access Modifier: private
+2023-05-14 23:14:37,582 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,587 INFO h.r.Car [main] Create an object for private constructor -> Car Name: Honda, Car Year: 2022
+2023-05-14 23:14:37,588 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,588 INFO h.r.Car [main] Field: name, Field Access Modifier: private final
+2023-05-14 23:14:37,588 INFO h.r.Car [main] Field: year, Field Access Modifier: private
+2023-05-14 23:14:37,589 INFO h.r.Car [main] Field: logger, Field Access Modifier: static
+2023-05-14 23:14:37,589 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,589 INFO h.r.Car [main] Update the name for private constructor -> Car Name: Toyota, Car Year: 2022
+2023-05-14 23:14:37,589 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,593 INFO h.r.Car [main] 
+Method Name: getName
+Access Modifier: public
+Return Type: class java.lang.String
+Parameter Count(s): 0
+
+2023-05-14 23:14:37,593 INFO h.r.Car [main] 
+Method Name: displayName
+Access Modifier: private
+Return Type: void
+Parameter Count(s): 0
+
+2023-05-14 23:14:37,594 INFO h.r.Car [main] 
+Method Name: getYear
+Access Modifier: public
+Return Type: int
+Parameter Count(s): 0
+
+2023-05-14 23:14:37,594 INFO h.r.Car [main] 
+Method Name: displayModelAndPrice
+Access Modifier: private
+Return Type: void
+Parameter Count(s): 2
+
+2023-05-14 23:14:37,594 INFO h.r.Car [main] 
+Method Name: displayModelAndPrice
+Parameter Type & Oder: class java.lang.String & arg0
+
+2023-05-14 23:14:37,594 INFO h.r.Car [main] 
+Method Name: displayModelAndPrice
+Parameter Type & Oder: int & arg1
+
+2023-05-14 23:14:37,594 INFO h.r.Car [main] 
+Method Name: displayYear
+Access Modifier: private static
+Return Type: void
+Parameter Count(s): 0
+
+2023-05-14 23:14:37,594 INFO h.r.Car [main] 
+Method Name: displayModel
+Access Modifier: private
+Return Type: void
+Parameter Count(s): 1
+
+2023-05-14 23:14:37,595 INFO h.r.Car [main] 
+Method Name: displayModel
+Parameter Type & Oder: class java.lang.String & arg0
+
+2023-05-14 23:14:37,595 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,595 INFO h.r.Car [main] You just invoked me: I am a private method without parameter
+2023-05-14 23:14:37,596 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,597 INFO h.r.Car [main] You just invoked me: I am a private method with 2 parameters: HondaCRV & 32000
+2023-05-14 23:14:37,597 INFO h.r.Car [main] ------
+2023-05-14 23:14:37,598 INFO h.r.Car [main] You just invoked me: I am a private static method without parameter
