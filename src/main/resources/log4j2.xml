@@ -3,6 +3,8 @@
     <Properties>
         <Property name="filename">src/main/java/hotelProject/logs</Property>
         <Property name="filename">src/main/java/homeWorkEight/logs</Property>
+        <Property name="filename">src/main/java/homeWorkTen/reflection/logs</Property>
+        <Property name="filename">src/main/java/homeWorkTen/stream/logs</Property>
     </Properties>
     <Appenders>
         <RollingFile name="file"
@@ -18,16 +20,30 @@
         </Console>
     </Appenders>
     <Loggers>
+
         <Logger name="hotelProject" level="info" additivity="false">
             <AppenderRef ref="file"/>
             <AppenderRef ref="Console"/>
         </Logger>
+
         <Logger name="homeWorkEight" level="info" additivity="false">
             <AppenderRef ref="file"/>
             <AppenderRef ref="Console"/>
         </Logger>
+
+        <Logger name="homeWorkTen.reflection" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="homeWorkTen.stream" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
         <Root level="trace">
             <AppenderRef ref="Console"/>
         </Root>
+
     </Loggers>
 </Configuration>
