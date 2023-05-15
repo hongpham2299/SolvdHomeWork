@@ -1,0 +1,9 @@
+2023-05-15 12:56:43,674 INFO h.s.Main [main] Find the duplicated element(s) & uppercase them -> [BUS, CAR, BUS, CAR]
+2023-05-15 12:56:43,677 INFO h.s.Main [main] Print Odd numbers with reserved order -> 5
+2023-05-15 12:56:43,677 INFO h.s.Main [main] Print Odd numbers with reserved order -> 3
+2023-05-15 12:56:43,678 INFO h.s.Main [main] Print Odd numbers with reserved order -> 1
+2023-05-15 12:56:43,679 INFO h.s.Main [main] {35=Madison, 22=Miko, 25=Monica}
+2023-05-15 12:56:43,680 INFO h.s.Main [main] Bobby
+2023-05-15 12:56:43,681 INFO h.s.Main [main] Concat 2 linkedlist, stream and distinct method -> [Peacock, Parrot, Crow, Dog, Cat, Elephant]
+2023-05-15 12:56:43,682 INFO h.s.Main [main] The sum of numbers -> 26
+2023-05-15 12:56:43,684 INFO h.s.Main [main] The length: 5 -> [-2, 0, 4, 6, 8]
