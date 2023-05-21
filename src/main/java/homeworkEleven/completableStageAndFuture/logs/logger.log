@@ -1,0 +1,14 @@
+2023-05-20 20:58:53,190 INFO h.c.Main [pool-2-thread-5] Thread: 21, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@1d628903
+2023-05-20 20:58:53,190 INFO h.c.Main [pool-2-thread-1] Thread: 17, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@16ad8d28
+2023-05-20 20:58:53,190 INFO h.c.Main [pool-2-thread-2] Thread: 18, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@4bc940a5
+2023-05-20 20:58:53,190 INFO h.c.Main [pool-2-thread-4] Thread: 20, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@4994098b
+2023-05-20 20:58:53,190 INFO h.c.Main [pool-2-thread-3] Thread: 19, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@3483d271
+2023-05-20 20:58:54,196 INFO h.c.Main [pool-2-thread-4] Thread: 20, Connection releases: homeworkEleven.completableStageAndFuture.Connection@4994098b
+2023-05-20 20:58:54,196 INFO h.c.Main [pool-2-thread-3] Thread: 19, Connection releases: homeworkEleven.completableStageAndFuture.Connection@3483d271
+2023-05-20 20:58:54,196 INFO h.c.Main [pool-2-thread-1] Thread: 17, Connection releases: homeworkEleven.completableStageAndFuture.Connection@16ad8d28
+2023-05-20 20:58:54,196 INFO h.c.Main [pool-2-thread-5] Thread: 21, Connection releases: homeworkEleven.completableStageAndFuture.Connection@1d628903
+2023-05-20 20:58:54,196 INFO h.c.Main [pool-2-thread-2] Thread: 18, Connection releases: homeworkEleven.completableStageAndFuture.Connection@4bc940a5
+2023-05-20 20:58:54,197 INFO h.c.Main [pool-2-thread-7] Waiting Thread: 23, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@16ad8d28
+2023-05-20 20:58:54,197 INFO h.c.Main [pool-2-thread-6] Waiting Thread: 22, Connection acquires: homeworkEleven.completableStageAndFuture.Connection@4bc940a5
+2023-05-20 20:58:55,199 INFO h.c.Main [pool-2-thread-7] Waiting Thread: 23, Connection releases: homeworkEleven.completableStageAndFuture.Connection@16ad8d28
+2023-05-20 20:58:55,200 INFO h.c.Main [pool-2-thread-6] Waiting Thread: 22, Connection releases: homeworkEleven.completableStageAndFuture.Connection@4bc940a5
