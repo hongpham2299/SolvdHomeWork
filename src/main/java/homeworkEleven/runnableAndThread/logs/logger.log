@@ -1,0 +1,20 @@
+2023-05-20 13:51:04,555 INFO h.r.Supplier [pool-2-thread-2] pool-2-thread-2 ->  added value: 46 to the bucket
+2023-05-20 13:51:04,557 INFO h.r.Supplier [pool-2-thread-2] pool-2-thread-2 ->  added value: 18 to the bucket
+2023-05-20 13:51:04,557 INFO h.r.Supplier [pool-2-thread-2] pool-2-thread-2 ->  added value: 94 to the bucket
+2023-05-20 13:51:04,557 INFO h.r.Supplier [pool-2-thread-2] pool-2-thread-2 ->  added value: 34 to the bucket
+2023-05-20 13:51:04,557 INFO h.r.Supplier [pool-2-thread-2] pool-2-thread-2 ->  added value: 89 to the bucket
+2023-05-20 13:51:04,558 INFO h.r.Buyer [pool-2-thread-4] pool-2-thread-4 ->  took out the value: 46 from the bucket
+2023-05-20 13:51:04,558 INFO h.r.Buyer [pool-2-thread-4] pool-2-thread-4 ->  took out the value: 18 from the bucket
+2023-05-20 13:51:04,558 INFO h.r.Buyer [pool-2-thread-4] pool-2-thread-4 ->  took out the value: 94 from the bucket
+2023-05-20 13:51:04,558 INFO h.r.Buyer [pool-2-thread-4] pool-2-thread-4 ->  took out the value: 34 from the bucket
+2023-05-20 13:51:04,559 INFO h.r.Buyer [pool-2-thread-4] pool-2-thread-4 ->  took out the value: 89 from the bucket
+2023-05-20 13:51:04,559 INFO h.r.Supplier [pool-2-thread-1] pool-2-thread-1 ->  added value: 65 to the bucket
+2023-05-20 13:51:04,559 INFO h.r.Supplier [pool-2-thread-1] pool-2-thread-1 ->  added value: 18 to the bucket
+2023-05-20 13:51:04,559 INFO h.r.Supplier [pool-2-thread-1] pool-2-thread-1 ->  added value: 16 to the bucket
+2023-05-20 13:51:04,560 INFO h.r.Supplier [pool-2-thread-1] pool-2-thread-1 ->  added value: 15 to the bucket
+2023-05-20 13:51:04,560 INFO h.r.Supplier [pool-2-thread-1] pool-2-thread-1 ->  added value: 60 to the bucket
+2023-05-20 13:51:04,564 INFO h.r.Buyer [pool-2-thread-3] pool-2-thread-3 ->  took out the value: 65 from the bucket
+2023-05-20 13:51:04,564 INFO h.r.Buyer [pool-2-thread-3] pool-2-thread-3 ->  took out the value: 18 from the bucket
+2023-05-20 13:51:04,565 INFO h.r.Buyer [pool-2-thread-3] pool-2-thread-3 ->  took out the value: 16 from the bucket
+2023-05-20 13:51:04,565 INFO h.r.Buyer [pool-2-thread-3] pool-2-thread-3 ->  took out the value: 15 from the bucket
+2023-05-20 13:51:04,565 INFO h.r.Buyer [pool-2-thread-3] pool-2-thread-3 ->  took out the value: 60 from the bucket
