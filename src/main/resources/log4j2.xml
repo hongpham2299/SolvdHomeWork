@@ -5,6 +5,10 @@
         <Property name="filename">src/main/java/homeWorkEight/logs</Property>
         <Property name="filename">src/main/java/homeWorkTen/reflection/logs</Property>
         <Property name="filename">src/main/java/homeWorkTen/stream/logs</Property>
+        <Property name="filename">src/main/java/homeworkEleven/connectionPool/logs</Property>
+        <Property name="filename">src/main/java/homeworkEleven/runnableAndThread/logs</Property>
+        <Property name="filename">src/main/java/homeworkEleven/completableStageAndFuture/logs</Property>
+
     </Properties>
     <Appenders>
         <RollingFile name="file"
@@ -37,6 +41,21 @@
         </Logger>
 
         <Logger name="homeWorkTen.stream" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="homeworkEleven.connectionPool" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="homeworkEleven.runnableAndThread" level="info" additivity="false">
+            <AppenderRef ref="file"/>
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="homeworkEleven.completableStageAndFuture" level="info" additivity="false">
             <AppenderRef ref="file"/>
             <AppenderRef ref="Console"/>
         </Logger>
