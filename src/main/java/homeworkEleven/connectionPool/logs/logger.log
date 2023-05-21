@@ -1,0 +1,14 @@
+2023-05-20 13:36:54,464 INFO h.c.Main [pool-2-thread-1] Thread: 17, Connection acquires: homeworkEleven.connectionPool.Connection@19db9b74
+2023-05-20 13:36:54,464 INFO h.c.Main [pool-2-thread-2] Thread: 18, Connection acquires: homeworkEleven.connectionPool.Connection@429a86d3
+2023-05-20 13:36:54,464 INFO h.c.Main [pool-2-thread-4] Thread: 20, Connection acquires: homeworkEleven.connectionPool.Connection@18ea6c85
+2023-05-20 13:36:54,465 INFO h.c.Main [pool-2-thread-3] Thread: 19, Connection acquires: homeworkEleven.connectionPool.Connection@f54da35
+2023-05-20 13:36:54,464 INFO h.c.Main [pool-2-thread-5] Thread: 21, Connection acquires: homeworkEleven.connectionPool.Connection@1d6bc71a
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-2] Thread: 18, Connection releases: homeworkEleven.connectionPool.Connection@429a86d3
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-5] Thread: 21, Connection releases: homeworkEleven.connectionPool.Connection@1d6bc71a
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-4] Thread: 20, Connection releases: homeworkEleven.connectionPool.Connection@18ea6c85
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-1] Thread: 17, Connection releases: homeworkEleven.connectionPool.Connection@19db9b74
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-3] Thread: 19, Connection releases: homeworkEleven.connectionPool.Connection@f54da35
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-7] Waiting Thread: 23, Connection acquires: homeworkEleven.connectionPool.Connection@429a86d3
+2023-05-20 13:36:55,473 INFO h.c.Main [pool-2-thread-6] Waiting Thread: 22, Connection acquires: homeworkEleven.connectionPool.Connection@18ea6c85
+2023-05-20 13:36:56,481 INFO h.c.Main [pool-2-thread-7] Waiting Thread: 23, Connection releases: homeworkEleven.connectionPool.Connection@429a86d3
+2023-05-20 13:36:56,481 INFO h.c.Main [pool-2-thread-6] Waiting Thread: 22, Connection releases: homeworkEleven.connectionPool.Connection@18ea6c85
